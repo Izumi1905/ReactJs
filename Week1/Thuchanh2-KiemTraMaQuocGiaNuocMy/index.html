@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8 />
+    <title>JavaScript Regular expression to check string's first character is uppercase or not</title>
+</head>
+<body>
+    <input type="text" placeholder="Nhập zipcode" id="valueinput">
+    <button type="submit" id="btn"> Check</button>
+    <script  >
+        let btn = document.querySelector('#btn');
+        btn.addEventListener('click',function(event){
+            event.preventDefault();
+            const giatri = document.getElementById('valueinput').value;
+            const regexp = /^[0-9]{5}(?:-[0-9]{4})?$/
+
+            if (regexp.test(giatri)) {
+                console.log("True");
+                } else {
+                    console.log("False");
+                }
+        })
+    </script>
+</body>
+</html>
+

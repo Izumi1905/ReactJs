@@ -1,0 +1,113 @@
+<!-- <html>
+    <head>
+        <title>JavaScript getElementById() Method</title>
+    </head>
+    <body>
+        <p id="message">A paragraph</p>
+    </body>
+</html>
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript parentNode</title>
+</head>
+<body>
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+
+    <script>
+        let note = document.querySelector('.note');
+        console.log(note.parentNode);
+    </script>
+</body>
+</html>  
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>JavaScript getElementsByTagName() Demo</title>
+</head>
+<body>
+    <h1>JavaScript getElementsByTagName() Demo</h1>
+    <h2>First heading</h2>
+    <p>This is the first paragraph.</p>
+    <h2>Second heading</h2>
+    <p>This is the second paragraph.</p>
+    <h2>Third heading</h2>
+    <p>This is the third paragraph.</p>
+
+    <button id="btnCount">Count H2</button>
+
+    <script>
+        let btn = document.getElementById('btnCount');
+        btn.addEventListener('click', () => {
+            let headings = document.getElementsByTagName('h2');
+            alert(`The number of H2 tags: ${headings.length}`);
+        });
+    </script>
+</body>
+
+
+</html>
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>JavaScript parentNode</title>
+</head>
+<body>
+    <div id="main">
+        <p class="note">This is a note!</p>
+    </div>
+
+    <script>
+        let note = document.querySelector('.note');
+        console.log(note.parentNode);
+    </script>
+</body>
+</html> -->
+
+
+
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>JS CreateElement Demo</title>
+    <ul id="menu">
+
+    </ul>
+</head>
+<body>
+
+</body>
+</html>
+
+
+
+<div id="note">
+    JavaScript textContent Demo!
+    <span style="display:none">Hidden Text!</span>
+    <!-- my comment -->
+</div> 
