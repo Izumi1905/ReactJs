@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let animals = new Set(['tiger', 'hippo', 'zebra', 'crocodile']);
+        console.log(animals); //in ra danh sách động vật đanh có trong sở thú ban đầu là 4 loài
+        animals.add('snake') //Peter thêm rắn vào trong sở thú
+        console.log(animals); //kiểm tra danh sách sau khi thêm rắn vào thì lúc này sở thú có 5 loài
+        animals.delete('tiger') //Peter xóa hổ ra khỏi sở thú 
+        console.log(animals);//khi kiểm tra thid số loài động vật còn lại là 4 bao gồm hippo, zebra, crocodile và snake.
+    </script>
+</body>
+</html>
