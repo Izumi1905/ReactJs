@@ -14,7 +14,40 @@
         {"ID": "SP11", "Name": "Bell's Sparrow", "Type": "Sparrow" },
         {"ID": "DV2", "Name": "Mourning Dove", "Type": "Dove" }
         ];
-        console.log(birds.map(birds => birds.ID));
+         const result = birds.map((item) => ({ID: item.ID}))
+        console.log(result)
+
+        
+        // var images = [
+        //     { height: '34px', width: '39px' },
+        //     { height: '54px', width: '19px' },
+        //     { height: '83px', width: '75px' },
+        //     ];
+
+
+        // console.log(images.map((images) => ({height : images.height})));
     </script>
 </body>
-</html>
+</html> 
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const a = [3, 4, 5, 6, 7];
+        const result = a.reduce((results,item) => results + item, 0)
+        console.log(result)
+    </script>
+</body>
+</html> -->
+

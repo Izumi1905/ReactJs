@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Person{
+            constructor(name){
+                this._name = name
+            }
+            get name(){
+                return this._name
+            }
+            set name(newName){
+                this._name = newName
+            }
+            walk (){
+                console.log(`${this._name} is walking`)
+            }
+        }
+        
+        class Programmer extends Person{
+            constructor(name, language, constructor){
+                super(name);
+                this._language = language
+            }
+            get language() {
+                return this._language;
+            }
+
+            set language(newLanguage) {
+                this._language = newLanguage;
+            }
+            writeCode() {
+                console.log(`${this._name} is writing code in ${this._language}.`);
+            }
+        }
+        let programmer = new Programmer("Tuyen", "JavaScript");
+        console.log(programmer.name); 
+
+        programmer.name = "Alice";
+        console.log(programmer.name); 
+        console.log(programmer.language); 
+
+        programmer.language = "Java";
+        console.log(programmer.language); 
+
+        programmer.walk(); 
+        programmer.writeCode();
+
+        
+
+    </script>
+</body>
+</html>

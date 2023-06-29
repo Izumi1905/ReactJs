@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class Information {
+            constructor(describe, parameter){
+                this.describe = describe
+                this.parameter = parameter
+            }
+
+            multi(){
+                let result_1 = this.parameter * 3
+                return result_1
+            }
+        }
+
+        let information = new Information('Ket qua phep tinh', 7)
+        let result_2 = information.multi()
+        console.log(information.describe)
+        console.log(result_2)
+
+        class Geometry extends Information {
+            constructor( describe, leght, parameter) {
+                super(describe, parameter);
+                this.leght = leght;
+            }
+            cul_function(){
+                let result_3 = this.parameter * this.leght
+                return result_3
+            }
+        }
+        let geometry = new Geometry('Kết quả phép nhân tham số và chiều dài:', 10, 6 )
+        let result_4 = geometry.cul_function()
+        console.log(geometry.describe)
+        console.log(result_4)
+    </script>
+</body>
+</html>
