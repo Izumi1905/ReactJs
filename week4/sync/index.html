@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function atLeastTwo(arr, callBack){
+            const filterArr = arr.filter(callBack);
+            return filterArr.length >= 2;
+        }
+        function Chan(number){
+            return number % 2 !== 0;
+        }
+        console.log(atLeastTwo([1, 2, 3, 4, 5], Chan));
+        console.log(atLeastTwo([2, 4, 6], Chan));
+        console.log(atLeastTwo([1, 2, 3, 2, 1], (t) => t > 3));
+
+    </script>
+</body>
+</html>

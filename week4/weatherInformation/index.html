@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Weather App</h1>
+    <input type="text" id="city-input" placeholder="Nhập thành phố">
+    <button id="search-button">Tìm kiếm</button>
+    <div id="weather-data"></div>
+    <script>
+        const searchButton = document.getElementById('search-button');
+
+        searchButton.addEventListener('click', function() {
+        const city = document.getElementById('city-input').value;
+
+        const weatherDataDiv = document.getElementById('weather-data');
+        weatherDataDiv.innerHTML = '';
+
+    fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=80980c97192aa1fa89cbba00117a4a6f`)
+        .then(function(response) {
+            return response.json();
+        })
+        .then(function(data) {
+            const city = data.name;
+            const temperature = data.main.temp;
+            const weatherDescription = data.weather[0].description;
+            const temp_min = data.main.temp_min;
+            const temp_max = data.main.temp_max;
+            const humidity = data.main.humidity;
+
+            const cityHeading = document.createElement('h2');
+            cityHeading.textContent = `Thành phố: ${city}`;
+
+            const temperatureParagraph = document.createElement('p');
+            temperatureParagraph.textContent = `Nhiệt độ: ${temperature}°C`;
+
+            const tempmin = document.createElement('p');
+            tempmin.textContent = `Nhiệt độ thấp nhất: ${temp_min}°C`;
+
+            const tempmax = document.createElement('p');
+            tempmax.textContent = `Nhiệt độ cao nhất: ${temp_max}°C`;
+
+            const humidity_ = document.createElement('p');
+            humidity_.textContent = `Độ ẩm: ${humidity}°C`;
+
+            const descriptionParagraph = document.createElement('p');
+            descriptionParagraph.textContent = `Mô tả: ${weatherDescription}`;
+
+            weatherDataDiv.appendChild(cityHeading);
+            weatherDataDiv.appendChild(temperatureParagraph);
+            weatherDataDiv.appendChild(tempmin);
+            weatherDataDiv.appendChild(tempmax);
+            weatherDataDiv.appendChild(humidity_);
+            weatherDataDiv.appendChild(descriptionParagraph);
+
+        })
+    })
+
+    </script>
+</body>
+</html>

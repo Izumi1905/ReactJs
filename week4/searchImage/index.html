@@ -1,0 +1,53 @@
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+
+    <div class="search-box">
+        <input type="text" class="input-search" placeholder="Type to Search..." id="search-input">
+        <button class="btn-search" id="search-button"><i class="fas fa-search">Search</i></button>
+        
+    </div>
+    <div id="image-container"></div>
+  <script >
+    const searchButton = document.getElementById('search-button');
+    searchButton.addEventListener('click', function() {
+    const keyword = document.getElementById('search-input').value;
+    const imageContainer = document.getElementById('image-container');
+    imageContainer.innerHTML = '';
+
+    fetch(`http://api.giphy.com/v1/gifs/search?q=${keyword}&api_key=tbYMahy47qhqEsxbDBIVghpJrYfIkXuB`)
+        .then(function(response) {
+        return response.json();
+        })
+        .then(function(data) {
+        const gifData = data.data;
+
+        for (let i = 0; i < gifData.length; i++) {
+            const gifUrl = gifData[i].images.original.url;
+
+            const imageElement = document.createElement('img');
+            imageElement.src = gifUrl;
+
+            imageContainer.appendChild(imageElement);
+        }
+        })
+        .catch(function(error) {
+        console.log(error);
+        });
+    });
+
+  </script>
+</body>
+</html>
+
+
+
