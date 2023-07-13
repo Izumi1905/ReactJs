@@ -1,32 +1,22 @@
 import './App.css';
-import React, { Component } from 'react';
+import React from 'react';
 
-class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      list: [],
-      item: '',
-    };
+const App = () =>{
+  const [list, setList] = React.useState([]);
+  const [item, setItem] = React.useState('');
+
+  const handleChange = (event) => {
+    setItem(event.target.value);
   }
 
-  handleChange = (event) => {
-    this.setState({
-      item: event.target.value
-    });
-  }
-
-  handleAddItem = () => {
-    if (this.state.item !== '') {
-      const newList = this.state.list.concat(this.state.item);
-      this.setState({
-        list: newList,
-        item: '',
-      });
+  const handleAddItem = () => {
+    if(item !== ''){
+      const newList = list.concat(item);
+      setList(newList);
+      setItem('');
     }
-  }
+  };
 
-  render() {
     return (
       <div className="container">
         <div className="row">
@@ -37,19 +27,19 @@ class App extends Component {
                 type="text"
                 className="form-control"
                 placeholder="Enter todo item"
-                value={this.state.item}
-                onChange={this.handleChange}
+                value={item}
+                onChange={handleChange}
               />
               <button
                 className="btn btn-primary"
                 type="button"
-                onClick={this.handleAddItem}
+                onClick={handleAddItem}
               >
                 Add
               </button>
             </div>
             <ul className="list-group">
-              {this.state.list.map((item, index) => (
+              {list.map((item, index) => (
                 <li className="list-group-item" key={index}>
                   {item}
                 </li>
@@ -60,6 +50,8 @@ class App extends Component {
       </div>
     );
   }
-}
+
 
 export default App;
+
+
