@@ -2,17 +2,29 @@ import React, { useState } from 'react';
 import './App.css';
 
 const App = () => {
+
   const [studentList, setStudentList] = useState([]);
   const [form, setForm] = useState({ name: '', phone: '', email: '' });
   const [isValid, setIsValid] = useState(false);
   const [indexSelected, setIndexSelected] = useState(-1);
 
-  const handleChange = (event) => {
-    const newForm = { ...form };
-    newForm[event.target.name] = event.target.value;
-    setForm(newForm);
-    checkInvalidForm(newForm);
-  };
+  // const handleChange = (event) => {
+  //   const newForm = { ...form };
+  //   newForm[event.target.name] = event.target.value;
+  //   setForm(newForm);
+  //   checkInvalidForm(newForm);
+  // };
+
+  const handleChange = (e) =>{
+    setForm({
+      ...form, 
+      [e.target.name] : e.target.value
+    })
+    checkInvalidForm({
+      ...form, 
+      [e.target.name] : e.target.value
+    });
+  }
 
   const handleSelect = (studentSelected, index) => {
     setForm(studentSelected);
@@ -36,6 +48,7 @@ const App = () => {
       }
       // Cập nhật lại giá trị state
       setStudentList(newList);
+      //setStudentList(...student, {...formcd})
       setForm({ name: '', phone: '', email: '' });
       setIsValid(false);
       setIndexSelected(-1);

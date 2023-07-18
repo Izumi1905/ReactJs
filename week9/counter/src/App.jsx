@@ -1,20 +1,18 @@
 import './App.css';
-
 import React from 'react';
 
-function useIncrement(addAmount) {
+function useIncrement(addAmount){
   const [count, setCount] = React.useState(0);
-
-  function increase() {
+  
+  function increase(){
     setCount(previousCount => previousCount + addAmount);
   }
-
   return [count, increase];
 }
 
 function Counter() {
   const [count1, increase1] = useIncrement(1);
-  const [count2, increase2] = useIncrement(5);
+  const [count2, increase2] = useIncrement(10);
 
   return (
     <div>
