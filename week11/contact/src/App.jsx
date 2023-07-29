@@ -1,7 +1,7 @@
 import './App.css';
 import {Formik } from 'formik';
 import React from 'react';
-
+import validate from './component/validation';
 const REGEX = {
   email: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 };
@@ -48,7 +48,8 @@ const App = () => {
       <h1>Contact form</h1>
       <Formik
         initialValues={{ name: '', email: '', phone: '' , message: ''}}
-        validate={handleValidate}
+        // validate={handleValidate}
+        validationSchema={validate}
         onSubmit={handleSubmit}
       >
         {({ handleSubmit, handleChange, values, errors }) => (

@@ -1,0 +1,32 @@
+/*thuc hanh 1*/
+/* label {
+  display: block;
+}
+
+.custom-input {
+  padding-bottom: 2%;
+} */
+
+
+/* thuc hanh 2 */
+label {
+  display: block;
+}
+
+.custom-input {
+  padding-bottom: 2%;
+}
+
+.custom-input-error label {
+  color: red;
+}
+
+.custom-input-error input {
+  border: 2px solid red;
+  border-radius: 4px;
+}
+
+.error {
+  color: red;
+  margin: 0;
+}
